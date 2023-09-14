@@ -1,1 +1,41 @@
-<p>food works!</p>
+<div class="container">
+  <div class="create-food">
+    <h1 class="mt-5">CREATE FOOD</h1>
+
+    <table class="mt-5 mb-5">
+      <tr>
+        <td><input type="text" [(ngModel)]="foodRequest.food_name" name="food_name" placeholder="Food name"></td>
+        <td><input type="text" [(ngModel)]="foodRequest.food_description" name="food_description"
+            placeholder="Food description"></td>
+        <td><input type="text" [(ngModel)]="foodRequest.food_detail" name="food_detail" placeholder="Food detail"></td>
+        <td><input type="text" [(ngModel)]="foodRequest.price" name="price" placeholder="Price"></td>
+        <td><button (click)="onCreate()">Create</button></td>
+      </tr>
+    </table>
+  </div>
+  <hr>
+  <div class="foods mt-5">
+    <h1 class="mb-5">FOODS</h1>
+
+    <table class="mb-5">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>FOOD NAME</th>
+          <th>DETAIL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let food of foods">
+          <td>{{food.id}}</td>
+          <td>{{food.food_name}}</td>
+          <td>
+            <a [routerLink]="[food.id]">Detail</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr>
+    <a routerLink="/">Go Back</a>
+  </div>
+</div>

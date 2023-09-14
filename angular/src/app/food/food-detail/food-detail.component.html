@@ -1,1 +1,16 @@
-<p>food-detail works!</p>
+<div class="container">
+  <h1 class="mt-5">FOOD DETAIL</h1>
+  <div class="food">
+    <table class="mt-5 mb-5">
+      <tr *ngIf="food">
+        <td><input type="text" disabled [(ngModel)]="food.id"></td>
+        <td><input type="text" placeholder="Food name" [(ngModel)]="food.food_name"></td>
+        <td><input type="text" placeholder="Food description" [(ngModel)]="food.food_description"></td>
+        <td><input type="text" placeholder="Food detail" [(ngModel)]="food.food_detail"></td>
+        <td><button (click)="onUpdate()">Update</button></td>
+        <td><button (click)="onDelete()">Delete</button></td>
+      </tr>
+    </table>
+    <a routerLink="/foods">Go Back</a>
+  </div>
+</div>
