@@ -1,1 +1,12 @@
-<p>register works!</p>
+<div class="container">
+  <table class="mt-5">
+    <tbody>
+      <tr>
+        <td><input [(ngModel)]="userRequest.name" name="name" type="text" placeholder="Name"></td>
+        <td><input [(ngModel)]="userRequest.email" name="email" type="email" placeholder="Email"></td>
+        <td><input [(ngModel)]="userRequest.password" name="password" type="password" placeholder="Password"></td>
+        <td><button (click)="register()">Register</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

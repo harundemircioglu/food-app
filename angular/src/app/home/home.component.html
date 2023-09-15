@@ -2,4 +2,7 @@
   <div class="foods mt-5">
     <a routerLink="foods">Foods</a>
   </div>
+  <a *ngIf="!currentUser" routerLink="/login">Login</a>
+  <h1 *ngIf="currentUser">Hoşgeldiniz,{{currentUser.name}}</h1>
+  <button *ngIf="currentUser" (click)="logout()">Logout</button>
 </div>
