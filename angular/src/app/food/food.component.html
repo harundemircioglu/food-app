@@ -9,6 +9,7 @@
             placeholder="Food description"></td>
         <td><input type="text" [(ngModel)]="foodRequest.food_detail" name="food_detail" placeholder="Food detail"></td>
         <td><input type="text" [(ngModel)]="foodRequest.price" name="price" placeholder="Price"></td>
+        <td><input type="file" name="img_url" (change)="onFileSelected($event)"></td>
         <td><button (click)="onCreate()">Create</button></td>
       </tr>
     </table>

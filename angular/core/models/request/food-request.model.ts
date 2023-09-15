@@ -3,4 +3,5 @@ export interface FoodRequest {
   food_description: string;
   food_detail: string;
   price: number;
+  img_url: string;
 }

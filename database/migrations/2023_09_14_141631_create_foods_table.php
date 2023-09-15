@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('foods', function (Blueprint $table) {
             $table->id();
             $table->string('food_name');
-            $table->text('food_description');
-            $table->text('food_detail');
-            $table->decimal('price');
+            $table->string('food_description');
+            $table->string('food_detail');
+            $table->integer('price');
+            $table->string('img_url');
             $table->timestamps();
         });
     }

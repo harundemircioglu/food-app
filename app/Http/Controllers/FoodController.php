@@ -30,6 +30,7 @@ class FoodController extends Controller
             'food_description' => 'required|string',
             'food_detail' => 'required|string',
             'price' => 'required|numeric',
+            'img_url' => 'required'
         ]);
 
         // Veri doğrulama başarısız olursa hata yanıtı döndür
@@ -37,12 +38,15 @@ class FoodController extends Controller
             return response()->json(['error' => $validator->errors()], 400);
         }
 
+        $img_url = $request->file('img_url')->store('public/images');
+
         // Veritabanına yeni yemek kaydet
         $new = [
             'food_name' => $request->input('food_name'),
             'food_description' => $request->input('food_description'),
             'food_detail' => $request->input('food_detail'),
-            'price' => $request->input('price')
+            'price' => $request->input('price'),
+            'img_url' => $img_url
         ];
 
         try {

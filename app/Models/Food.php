@@ -15,6 +15,7 @@ class Food extends Model
         'food_name',
         'food_description',
         'food_detail',
-        'price'
+        'price',
+        'img_url'
     ];
 }
